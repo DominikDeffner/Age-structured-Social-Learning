@@ -1,4 +1,4 @@
-# Age-structured-Social-Learning
+# Age-structured Social Learning
 
 This repository contains the scripts to reproduce all results and plots in 
 
