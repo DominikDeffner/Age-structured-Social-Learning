@@ -6,14 +6,8 @@ This repository contains the scripts to reproduce all results and plots in
 
 Description of files:
 
-- "FigS1Recursions.r" contains numerical simulation of analytical models and plotting script to reproduce population growth curves in Fig. S1 in the ESM
+- "Recursions.r" contains code for numerical simulation of age-structured social learning model. It can be used to get a feeling for how the model behaves and produces output for Figs. 1 and 2.
 
-- "FigS2Isoclines.r" calculates and plots isoclines for equilibrium population sizes (Fig. S2)
+- ABM_Simulations contains code for stochastic individual-based simulations for both temporally and spatially variable environments. It's advisable to run this on a computer cluster. Produces output for Figs. 4, S2 and S3.
 
-- "Simulation_Code_single_FigS3.r". Code for running a single simulation with specified parameter combination. Also contains code to create basic adaptation and demographic dynamics plot from simulation output (Fig. S3)
-
-- "Simulation_Code_Cluster.r" provides the code for the main simulation models for all 810 parameter combinations used in the paper
-
-- "Fig2MainResults.r" lets you compute relevant summary statistics from output of "Simulation_Code_Cluster.r" and plot main results for different costs of individual learning (Figs. 2, S4 and S5)
-
-- "Fig3TimingeffRates.r" takes individual-level data from "Simulation_Code_Cluster.r" and computes adaptation levels, number of births as well as effective vital rates for different times after change in the environment (Fig. 3)
+- Other files contain plotting code to reproduce all figures in the manuscript. In the beginning of each file, it says how to generate data for respective plots.
