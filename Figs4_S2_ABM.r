@@ -1,8 +1,9 @@
 
-# Plotting code for Figs. 4 and S2 (heatmaps). Proportions of social learners and old bias
+# Plotting code for Fig.4 and Fig.S2 (heatmaps). Proportions of social learners and old bias
 # for the temporal and spatial individual-based model.
 
 # Plots results from "ABM_Simulations.r"
+
 
 # Remove first 2000 timesteps and calculate mean for each parameter combination
 

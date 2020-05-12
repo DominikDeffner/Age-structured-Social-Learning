@@ -4,20 +4,26 @@
 
 # Set IL_Only to "Yes" for population with only individual learners
 # Set Stoch_E to "Yes" for stochastically changing environment
+# max_age = 2 corresponds to discrete-generation model.
 
 # Includes code for simple plot with time dynamics in the end
 
-recurs <- function( tmax=1000 ,
-                      max_age = 80  ,
-                      b=c(0.35,0.35) ,
-                      s=c(0.85,0.93),
-                      u=0.01,
-                      z=0.5, 
-                      c=0.01,
-                      phi = 1,
-                      SL_Error = 0,
-                      IL_Only = "No", 
-                      Stoch_E = "Yes") {
+# Run this function with respective parameter values to reproduce
+# results shown in Fig.1 and Fig.2
+
+
+# Simulation function
+recurs <- function( tmax=1000 ,           # Timesteps
+                      max_age = 80  ,     # Maximum age (max_age = 2 corresponds to Rogers model)
+                      b=c(0.35,0.35) ,    # Fertility rates for non-adapted and adapted individuals
+                      s=c(0.85,0.93),     # Survival rates for non-adapted and adapted individuals
+                      u=0.01,             # Rate of environmental change
+                      z=0.5,              # Success rate of individual learning
+                      c=0.01,             # Recruitment cost of individual learning
+                      phi = 1,            # Age bias (phi = 1 means unbiased)
+                      SL_Error = 0,       # Error rate in social learning
+                      IL_Only = "No",     # Individual learners only?
+                      Stoch_E = "Yes") {  # Stochastically changing environment?
   
 
   #Create population array with age-strategy classes
@@ -103,9 +109,9 @@ recurs <- function( tmax=1000 ,
       for ( k in 1:2 ){
         for (l in 1:2) {
         n[ 1 , j , k ] <- 0 
-        }
-       }
-    }
+        }#j
+       }#k
+    }#l
     
     # reproduction --- fill age class 1
 

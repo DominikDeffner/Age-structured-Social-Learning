@@ -1,7 +1,11 @@
  
-# Simulation code for individual-based social learning model with 
+# Simulation code for stochastic individual-based social learning model with 
 # either temporal or spatial variability in the environment
+
 # Produces output for Figures 2, S2 and S3
+
+# Running all parameter combination takes quite long if you don't have access
+# to a computer cluster
 
 
 ######

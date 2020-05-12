@@ -4,12 +4,9 @@
 
 # Plots results from "sim_temporal" in file "ABM_Simulations.r"
 
+
+
 # Remove first 2000 timesteps and calculate mean for each parameter combination
-
-
-seq_temporal<- expand.grid(Nsim=10, tmax=7000, Nmax=1000, max_age=80, sigma= c(0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1), u = c(0.001, 0.005, 0.01, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
-          z=c(0.01,0.5,1),c= c(0.05, 0.1, 0.2), mu_pi = 0.005,mu_phi= 0.005, SL_Error=c(0,0.1,0.3), Nmodels = 2)
-
 
 MeanOld <- matrix(NA, nrow = nrow(seq_temporal), ncol = 10 )
 p <- matrix(NA, nrow = nrow(seq_temporal), ncol = 10 )
