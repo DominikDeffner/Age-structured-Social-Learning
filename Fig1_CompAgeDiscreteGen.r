@@ -4,7 +4,7 @@
 
 # Load function "recurs" in file "Recursions.R"
 
-seq <-expand.grid(tmax=5000, max_age=c(2,80), u = c(0.001, 0.005, 0.01, 0.05, 0.1, 0.2),
+seq <-expand.grid(tmax=10000, max_age=c(2,80), u = c(0.001, 0.005, 0.01, 0.05, 0.1, 0.2),
                   z=1,c=c(0.01,0.05,0.1),phi = 1, SL_Error = 0, IL_Only = c("Yes", "No"), Stoch_E = "No")
 
 
@@ -19,12 +19,10 @@ result <- mclapply(
 
 LambdaRog <- matrix(0, ncol = 6, nrow = 3)
 LambdaRogIL <- matrix(0, ncol = 6, nrow = 3)
-
 SLRog <- matrix(0, ncol = 6, nrow = 3)
 
 LambdaAge <- matrix(0, ncol = 6, nrow = 3)
 LambdaAgeIL <- matrix(0, ncol = 6, nrow = 3)
-
 SLAge <- matrix(0, ncol = 6, nrow = 3)
 
 

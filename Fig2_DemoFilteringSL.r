@@ -4,11 +4,11 @@
 # Load function "recurs" from file "Recursions.R"
 
 
-sim_IL_Fert <- recurs(s = c(0.85, 0.85), b = c(0.35, 0.5), IL_Only = "Yes", Stoch_E = "Yes")
-sim_IL_Viab <- recurs(s = c(0.85, 0.93), b = c(0.35, 0.35), IL_Only = "Yes", Stoch_E = "Yes")
+sim_IL_Fert <- recurs(tmax=10000, s = c(0.85, 0.85), b = c(0.35, 0.5), IL_Only = "Yes", Stoch_E = "Yes")
+sim_IL_Viab <- recurs(tmax=10000, s = c(0.85, 0.93), b = c(0.35, 0.35), IL_Only = "Yes", Stoch_E = "Yes")
 
-sim_SL_Fert <- recurs(s = c(0.85, 0.85), b = c(0.35, 0.5), IL_Only = "No", Stoch_E = "Yes")
-sim_SL_Viab <- recurs(s = c(0.85, 0.93), b = c(0.35, 0.35), IL_Only = "No", Stoch_E = "Yes")
+sim_SL_Fert <- recurs(tmax=10000, s = c(0.85, 0.85), b = c(0.35, 0.5), IL_Only = "No", Stoch_E = "Yes")
+sim_SL_Viab <- recurs(tmax=10000, s = c(0.85, 0.93), b = c(0.35, 0.35), IL_Only = "No", Stoch_E = "Yes")
 
 
 #calculate time since change
