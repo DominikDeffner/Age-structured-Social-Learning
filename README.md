@@ -10,4 +10,6 @@ Description of files:
 
 - ABM_Simulations contains code for stochastic individual-based simulations for both temporally and spatially variable environments. It's advisable to run this on a computer cluster. Produces output for Figs. 4, S2 and S3.
 
+- "Analysis.nb" is a Wolfram Mathematica notebook used to solve recursions in section 3.3. of the manuscript
+
 - Other files contain plotting code to reproduce all figures in the manuscript. In the beginning of each file, it says how to generate data for respective plots.
