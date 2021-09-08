@@ -6,7 +6,13 @@ p <- function(u, s){
   1 - (u / (1 - s))
 }
 
-par(oma=c(0,0,0,0))
+
+
+graphics.off()
+png("Fig3Threshold.png", width = 8,height = 8, units = "cm", res = 900)
+
+par(oma=c(0,0,0,0),
+    mar=c(4,4,0.5,0.5))
 curve(p(u=0.01,x), from = 0, to = 1, type = "n", bty = "l",ylab = "", xlab = "")
 for (u in c(0.001,0.01,0.1,0.2,0.3,0.4, 0.5)) {
   curve(p(u=u,x), from = 0, to = 1, add = TRUE, lwd = 1.5, ylab = "", xlab = "")
@@ -23,3 +29,5 @@ text(0.52,0.52, expression(paste(italic(u), " = 0.2")), srt = -45, cex = 0.7)
 text(0.65,0.65,  expression(paste(italic(u), " = 0.1")), srt = -45, cex = 0.7)
 text(0.86,0.86,  expression(paste(italic(u), " = 0.01")), srt = -44, cex = 0.7)
 text(0.914,0.914,  expression(paste(italic(u), " = 0.001")), srt = -45, cex = 0.7)
+
+dev.off()
