@@ -17,13 +17,13 @@ recurs <- function( tmax=1000 ,           # Timesteps
                       max_age = 80  ,     # Maximum age (max_age = 2 corresponds to Rogers model)
                       b=c(0.35,0.35) ,    # Fertility rates for non-adapted and adapted individuals
                       s=c(0.85,0.93),     # Survival rates for non-adapted and adapted individuals
-                      u=0.01,             # Rate of environmental change
-                      z=0.5,              # Success rate of individual learning
-                      c=0.01,             # Recruitment cost of individual learning
+                      u=0.1,             # Rate of environmental change
+                      z=0.5,                # Success rate of individual learning
+                      c=0.05,             # Recruitment cost of individual learning
                       phi = 1,            # Age bias (phi = 1 means unbiased)
                       SL_Error = 0,       # Error rate in social learning
                       IL_Only = "No",     # Individual learners only?
-                      Stoch_E = "Yes") {  # Stochastically changing environment?
+                      Stoch_E = "No") {  # Stochastically changing environment?
   
 
   #Create population array with age-strategy classes
@@ -271,12 +271,12 @@ result <- recurs()
 par(mfrow=c(1,2))
 plot(apply(result$AdaptedPerAge, 1, mean), type = "l", ylim = c(0,1), ylab = "Proportion Adapted", xlab = "Age")
 
-plot(result$lambda/max(result$lambda), type= "l", ylim = c(0,1), ylab = "")
+plot(result$lambda/max(result$lambda), type= "l", ylim = c(0,1), ylab = "", lty =1, xlab = "Time")
 par(new=TRUE)
-plot(result$SL,type = "l", ylim = c(0,1), col="green",  yaxt = "n", ylab = "")
+plot(result$SL,type = "l", ylim = c(0,1), col="green",  yaxt = "n", ylab = "", lty =2, xlab = "")
 par(new=TRUE)
-plot(result$Adapt, type = "l", ylim = c(0,1), col = "red", yaxt = "n", ylab = "")
-legend("topright", c("Fitness", "Prop Adapted", "Prop SL"), col = c("black", "red", "green"), lty = 1, cex = 0.6)
+plot(result$Adapt, type = "l", ylim = c(0,1), col = "red", yaxt = "n", ylab = "", lty =3, xlab = "")
+legend("bottomright", c("Fitness", "Prop Adapted", "Prop SL"), col = c("black", "red", "green"), lty = 1:3, cex = 0.6)
 
 
 

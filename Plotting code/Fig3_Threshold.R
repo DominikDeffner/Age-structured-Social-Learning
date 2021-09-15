@@ -1,6 +1,5 @@
 
-# Code for Fig. 3 Thresholds for older generations
-# to have higher proportions of adaptive behavior 
+# Code for Fig. 3 Thresholds for older generations to have higher proportions of adaptive behavior 
 
 p <- function(u, s){
   1 - (u / (1 - s))
@@ -8,8 +7,8 @@ p <- function(u, s){
 
 
 
-graphics.off()
-png("Fig3Threshold.png", width = 8,height = 8, units = "cm", res = 900)
+#graphics.off()
+#png("Fig3Threshold.png", width = 8,height = 8, units = "cm", res = 900)
 
 par(oma=c(0,0,0,0),
     mar=c(4,4,0.5,0.5))
@@ -30,4 +29,4 @@ text(0.65,0.65,  expression(paste(italic(u), " = 0.1")), srt = -45, cex = 0.7)
 text(0.86,0.86,  expression(paste(italic(u), " = 0.01")), srt = -44, cex = 0.7)
 text(0.914,0.914,  expression(paste(italic(u), " = 0.001")), srt = -45, cex = 0.7)
 
-dev.off()
+#dev.off()

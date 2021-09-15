@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     21444,        684]
+NotebookDataLength[     21442,        684]
 NotebookOptionsPosition[     19881,        626]
-NotebookOutlinePosition[     20256,        642]
-CellTagsIndexPosition[     20213,        639]
+NotebookOutlinePosition[     20255,        642]
+CellTagsIndexPosition[     20212,        639]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -392,7 +392,7 @@ Cell[BoxData[
         RowBox[{"(", 
          RowBox[{"1", "-", "u"}], ")"}]}]}]]}]}]}], ";"}]], "Input",
  CellChangeTimes->{{3.726645662850503*^9, 3.726645665358849*^9}}]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -624,8 +624,8 @@ Cell[BoxData[
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{881, 1021},
-WindowMargins->{{81, Automatic}, {Automatic, 180}},
+WindowSize->{1920, 997},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
 Magnification:>1.25 Inherited,
 FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
 StyleDefinitions->"Default.nb"
@@ -642,7 +642,7 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 517, 8, 95, "Subsection"],
+Cell[580, 22, 517, 8, 59, "Subsection"],
 Cell[CellGroupData[{
 Cell[1122, 34, 740, 20, 37, "Input"],
 Cell[1865, 56, 658, 20, 70, "Output"]
@@ -655,7 +655,7 @@ Cell[3271, 104, 617, 16, 63, "Input"],
 Cell[3891, 122, 661, 17, 63, "Input"],
 Cell[CellGroupData[{
 Cell[4577, 143, 874, 24, 37, "Input"],
-Cell[5454, 169, 2096, 58, 101, "Output"]
+Cell[5454, 169, 2096, 58, 56, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[7587, 232, 124, 2, 37, "Input"],
@@ -668,9 +668,9 @@ Cell[11237, 350, 271, 5, 37, "Input"],
 Cell[11511, 357, 286, 4, 37, "Output"]
 }, Open  ]],
 Cell[11812, 364, 928, 29, 81, "Input"]
-}, Closed]],
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[12777, 398, 433, 7, 84, "Subsection"],
+Cell[12777, 398, 433, 7, 59, "Subsection"],
 Cell[13213, 407, 406, 11, 37, "Input"],
 Cell[CellGroupData[{
 Cell[13644, 422, 244, 5, 37, "Input"],

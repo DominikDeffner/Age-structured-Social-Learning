@@ -5,7 +5,7 @@
 # Load function "recurs" in file "Recursions.R"
 
 seq <-expand.grid(tmax=10000, max_age=c(2,80), u = c(0.001, 0.005, 0.01, 0.05, 0.1, 0.2),
-                  z=1,c=c(0.01,0.05,0.1),phi = c(0.5,1,2), SL_Error = 0, IL_Only = c("Yes", "No"), Stoch_E = "No")
+                  z=1,c=c(0.01,0.05,0.1),phi = 1, SL_Error = 0, IL_Only = c("Yes", "No"), Stoch_E = "No")
 
 
 library(parallel)
@@ -13,7 +13,7 @@ library(parallel)
 result <- mclapply(
   1:nrow(seq) ,
   function(i) recurs(seq$tmax[i], seq$max_age[i], b = c(1,1.5), s = c(0.9,0.9), seq$u[i], seq$z[i], seq$c[i], seq$phi[i], seq$SL_Error[i], seq$IL_Only[i], seq$Stoch_E[i]),
-  mc.cores=72)
+  mc.cores=1)
 
 
 
@@ -50,8 +50,8 @@ col.pal <- brewer.pal(length(x), "Dark2") #create a pallette which you loop over
 
 
 
-graphics.off()
-png("Fig1.png", width = 17,height = 16, units = "cm", res = 900)
+#graphics.off()
+#png("Fig1.png", width = 17,height = 16, units = "cm", res = 900)
 
 par(mfrow = c(2,2),
     mar = c(2,4,1,0.1),
@@ -96,5 +96,5 @@ points(1:6, LambdaAgeIL[3,], pch=18, cex = 1.4, col = "black")
 legend("topright", "D", bty="n")
 mtext(side = 1, line = 1, outer=TRUE, expression(paste("Rate of environmental change ",italic("u"))))
 
-dev.off()
+#dev.off()
 

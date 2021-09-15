@@ -1,12 +1,89 @@
 
+# Plotting code for Fig 2. Interplay between demographic filtering and social learning
+
+# Load function "recurs" from file "Recursions.R"
+
+
+sim_IL_Fert <- recurs(tmax=100000, s = c(0.85, 0.85), b = c(0.35, 0.5), z = 0.5, c = 0.01, u = 0.01, phi = 1, SL_Error = 0, IL_Only = "Yes", Stoch_E = "Yes")
+sim_IL_Viab <- recurs(tmax=100000, s = c(0.85, 0.93), b = c(0.35, 0.35), z = 0.5, c = 0.01, u = 0.01, phi = 1, SL_Error = 0, IL_Only = "Yes", Stoch_E = "Yes")
+
+sim_SL_Fert <- recurs(tmax=100000, s = c(0.85, 0.85), b = c(0.35, 0.5), z = 0.5, c = 0.01, u = 0.01, phi = 1, SL_Error = 0, IL_Only = "No", Stoch_E = "Yes")
+sim_SL_Viab <- recurs(tmax=100000, s = c(0.85, 0.93), b = c(0.35, 0.35), z = 0.5, c = 0.01, u = 0.01, phi = 1, SL_Error = 0, IL_Only = "No", Stoch_E = "Yes")
+
+
+#calculate time since change
+
+sim_IL_Fert$TimeSinceChange <- c()
+for (i in 1:100000) {
+  print(i)
+  if (i <= min(which(sim_IL_Fert$Change==1))){
+    sim_IL_Fert$TimeSinceChange[i] <- i
+  } else {
+    sim_IL_Fert$TimeSinceChange[i] <- i - max(which(sim_IL_Fert$Change==1)[which(sim_IL_Fert$Change==1)<i])
+    }
+}
+
+sim_IL_Fert$AdaptPerTime <- c()
+for (i in unique(sim_IL_Fert$TimeSinceChange)) {
+  sim_IL_Fert$AdaptPerTime[i] <- mean(sim_IL_Fert$Adapt[which(sim_IL_Fert$TimeSinceChange == i)])
+}
+
+
+sim_IL_Viab$TimeSinceChange <- c()
+for (i in 1:100000) {
+  if (i <= min(which(sim_IL_Viab$Change==1))){
+    sim_IL_Viab$TimeSinceChange[i] <- i
+  } else {
+    sim_IL_Viab$TimeSinceChange[i] <- i - max(which(sim_IL_Viab$Change==1)[which(sim_IL_Viab$Change==1)<i])
+  }
+}
+
+sim_IL_Viab$AdaptPerTime <- c()
+for (i in unique(sim_IL_Viab$TimeSinceChange)) {
+  sim_IL_Viab$AdaptPerTime[i] <- mean(sim_IL_Viab$Adapt[which(sim_IL_Viab$TimeSinceChange == i)])
+}
 
 
 
 
 
-graphics.off()
 
-png("FigS222AdaptPerAgeTime.png", width = 25,height = 12, units = "cm", res = 900)
+#SL
+sim_SL_Fert$TimeSinceChange <- c()
+for (i in 1:100000) {
+  if (i <= min(which(sim_SL_Fert$Change==1))){
+    sim_SL_Fert$TimeSinceChange[i] <- i
+  } else {
+    sim_SL_Fert$TimeSinceChange[i] <- i - max(which(sim_SL_Fert$Change==1)[which(sim_SL_Fert$Change==1)<i])
+  }
+}
+
+sim_SL_Fert$AdaptPerTime <- c()
+for (i in unique(sim_SL_Fert$TimeSinceChange)) {
+  sim_SL_Fert$AdaptPerTime[i] <- mean(sim_SL_Fert$Adapt[which(sim_SL_Fert$TimeSinceChange == i)])
+}
+
+
+sim_SL_Viab$TimeSinceChange <- c()
+for (i in 1:100000) {
+  if (i <= min(which(sim_SL_Viab$Change==1))){
+    sim_SL_Viab$TimeSinceChange[i] <- i
+  } else {
+    sim_SL_Viab$TimeSinceChange[i] <- i - max(which(sim_SL_Viab$Change==1)[which(sim_SL_Viab$Change==1)<i])
+  }
+}
+
+sim_SL_Viab$AdaptPerTime <- c()
+for (i in unique(sim_SL_Viab$TimeSinceChange)) {
+  sim_SL_Viab$AdaptPerTime[i] <- mean(sim_SL_Viab$Adapt[which(sim_SL_Viab$TimeSinceChange == i)])
+}
+
+
+
+
+#graphics.off()
+
+#png("Fig2DemoFiltering.png", width = 25,height = 12, units = "cm", res = 900)
 
 
 
@@ -214,4 +291,4 @@ mtext(side = 2, line = 0.7 , "Proportion Adapted", cex = 1, outer = TRUE)
 mtext(side = 1, line = 1 , "        Age                                                                        Time since change", cex = 1.1, outer = TRUE)
 
 
-dev.off()
+#dev.off()
