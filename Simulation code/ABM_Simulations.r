@@ -774,6 +774,3 @@ result_adult <- mclapply(
 
 
 
-
-
-

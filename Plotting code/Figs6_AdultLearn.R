@@ -103,4 +103,3 @@ mtext(side = 2, outer = TRUE, cex = 1.3, line = -1.5, expression(paste(sigma," =
 
 
 
-
