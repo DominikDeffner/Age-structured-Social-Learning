@@ -2,7 +2,7 @@
 
 This repository contains the scripts to reproduce all results and plots in 
 
-***Deffner D, McElreath R. (submitted). When does selection favor learning from the old? Social Learning in age-structured populations***
+***Deffner D, McElreath R. (2022). When does selection favor learning from the old? Social Learning in age-structured populations. PloS ONE https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0267204***
 
 Description of files:
 
